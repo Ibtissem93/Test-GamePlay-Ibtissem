@@ -13,10 +13,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float moveSpeed;
     [SerializeField] private float minX, maxX;
     [SerializeField] private GameObject Camera;
-    [SerializeField] private GameObject winPanel, losePanel;
+ 
     [SerializeField] public Transform HeadOfPlayer;
     [SerializeField] public Transform ParentOfInstantiate;
-    [SerializeField] private List<GameObject> _parts;
+   
+    public Animator lipsRun;
 
 
     private void Start()
@@ -24,7 +25,6 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         playState = true;
 
-        _parts = new List<GameObject>();
     }
 
     private void Update()
@@ -65,8 +65,9 @@ public class PlayerMovement : MonoBehaviour
       //  for (int i = 0; i < _parts.Count; i++)
      //   {
             GameObject NewObjAdded = Instantiate(objectToClone, HeadOfPlayer.position, default, ParentOfInstantiate);
-        NewObjAdded.GetComponent<Animator>().Play("LipsRunAnim");
-            HeadOfPlayer.position = NewObjAdded.transform.position + new Vector3(0, 0, 2);
+        NewObjAdded.GetComponent<Animator>().enabled = true;
+        NewObjAdded.GetComponent<Animator>().runtimeAnimatorController = lipsRun.runtimeAnimatorController;
+        HeadOfPlayer.position = NewObjAdded.transform.position + new Vector3(0, 0, 2);
        // }
        
   
