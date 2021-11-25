@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -18,7 +19,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] public Transform ParentOfInstantiate;
    
     public Animator lipsRun;
+  
+    public GameObject LeaderBoared;
     List<GameObject> goList;
+   
    
 
 
@@ -58,9 +62,22 @@ public class PlayerMovement : MonoBehaviour
      
         }
 
+        if (other.transform.CompareTag("FinishLevel"))
+        {
+            ShowLeaderBoard();
+
+        }
+
     }
 
-   
+    private void ShowLeaderBoard()
+    {
+        transform.gameObject.GetComponent<Animator>().enabled = false;
+      
+        LeaderBoared.transform.GetChild(1).GetChild(1).GetChild(5).gameObject.GetComponent<Text>().text = (ParentOfInstantiate.GetChildCount() - 2).ToString();
+        LeaderBoared.SetActive(true);
+    }
+
     private void AddBody(GameObject objectToClone)
     {
       //  for (int i = 0; i < _parts.Count; i++)
