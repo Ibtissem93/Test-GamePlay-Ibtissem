@@ -18,12 +18,16 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] public Transform ParentOfInstantiate;
    
     public Animator lipsRun;
+    List<GameObject> goList;
+    public GameObject newLip;
 
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
         playState = true;
+        goList = new List<GameObject>();
+
 
     }
 
@@ -40,9 +44,7 @@ public class PlayerMovement : MonoBehaviour
          
             playState = false;
             Invoke(nameof(Restart), 3);
-            losePanel.SetActive(true);
-        
-
+            
             transform.localScale = new Vector3(transform.localScale.x, 0.1f, transform.localScale.z);
         }
     }
@@ -53,21 +55,41 @@ public class PlayerMovement : MonoBehaviour
         if (other.transform.CompareTag ("LipsFood"))
         {
             Destroy(other.gameObject);
-           // _parts.Add(other.gameObject);
             AddBody(other.gameObject);
+     
+        }
+
+        if(other.transform.CompareTag("GateLight"))
+        {
+            Destroy(other.gameObject);
+            ChangeLipsGateLight();
+          
+        }
+    }
+
+    private void ChangeLipsGateLight()
+    {
+        foreach (GameObject go in goList)
+        {
+            GameObject ChildGameObject1 = go.transform.GetChild(4).gameObject;
+            ChildGameObject1.SetActive(false);
+            Instantiate(newLip, ChildGameObject1.transform.position - new Vector3(0, 1.7f, 0), default, go.transform);
 
 
         }
+        goList.Clear();
     }
 
     private void AddBody(GameObject objectToClone)
     {
       //  for (int i = 0; i < _parts.Count; i++)
      //   {
-            GameObject NewObjAdded = Instantiate(objectToClone, HeadOfPlayer.position, default, ParentOfInstantiate);
+        GameObject NewObjAdded = Instantiate(objectToClone, HeadOfPlayer.position, HeadOfPlayer.rotation, ParentOfInstantiate);
+      
         NewObjAdded.GetComponent<Animator>().enabled = true;
         NewObjAdded.GetComponent<Animator>().runtimeAnimatorController = lipsRun.runtimeAnimatorController;
-        HeadOfPlayer.position = NewObjAdded.transform.position + new Vector3(0, 0, 2);
+        goList.Add(NewObjAdded);
+        HeadOfPlayer.position = NewObjAdded.transform.position + new Vector3(0, 0, 1f);
        // }
        
   
