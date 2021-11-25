@@ -72,7 +72,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void ShowLeaderBoard()
     {
-        transform.gameObject.GetComponent<Animator>().enabled = false;
+      //  transform.gameObject.GetComponent<Animator>().enabled = false;
       
         LeaderBoared.transform.GetChild(1).GetChild(1).GetChild(5).gameObject.GetComponent<Text>().text = (ParentOfInstantiate.GetChildCount() - 2).ToString();
         LeaderBoared.SetActive(true);
