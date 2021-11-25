@@ -6,6 +6,7 @@ TagManager:
   tags:
   - LipsFood
   - GateLight
+  - Gate_P
   layers:
   - Default
   - TransparentFX
