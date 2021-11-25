@@ -4,46 +4,53 @@ using UnityEngine;
 
 public class ChangeLipModel : MonoBehaviour
 {
-    public GameObject newLipPink;
-    public GameObject newLipBlue;
    
+    int i = 4;
 
     void OnTriggerEnter(Collider other)
     {
 
-        if (other.transform.CompareTag("GateLight"))
+        if (other.transform.CompareTag("LipsFood"))
         {
          
-            ChangeLipsGateLight();
+            ChangeLipsGateLight(other.gameObject);
 
         }
         
-        if (other.transform.CompareTag("Gate_P"))
-        {
-        
-            ChangeLipsGateP();
-
-        }
     }
 
 
-    private void ChangeLipsGateLight()
+    private void ChangeLipsGateLight(GameObject ChildGameObject2)
     {
+        
+            GameObject gameone = ChildGameObject2.transform.GetChild(4).gameObject;
+            if (gameone.activeSelf)
+            {
 
-        GameObject ChildGameObject2 = transform.GetChild(4).gameObject;
-        ChildGameObject2.SetActive(false);
-        transform.GetChild(5).gameObject.SetActive(true);
-      
+              gameone.SetActive(false);
+           
+              ChildGameObject2.transform.GetChild(5).gameObject.SetActive(true);
+             
+            }
+            else 
+            {
+
+              GameObject gametwo = ChildGameObject2.transform.GetChild(5).gameObject;
+                if (gametwo.activeSelf)
+                {
+                   gametwo.SetActive(false);
+                   ChildGameObject2.transform.GetChild(6).gameObject.SetActive(true);
+                }
+                else
+                {
+                ChildGameObject2.transform.GetChild(6).gameObject.SetActive(false);
+                GameObject gameThree = ChildGameObject2.transform.GetChild(7).gameObject;
+                gameThree.SetActive(true);
+                }
+            }
+
+         
     }
     
-    private void ChangeLipsGateP()
-    {
-
-        GameObject ChildGameObject2 = transform.GetChild(4).gameObject;
-        ChildGameObject2.SetActive(false);
-        transform.GetChild(5).gameObject.SetActive(false);
-        transform.GetChild(6).gameObject.SetActive(true);
-
-    }
-
+  
 }
