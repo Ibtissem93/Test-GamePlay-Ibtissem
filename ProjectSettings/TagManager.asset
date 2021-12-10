@@ -8,11 +8,14 @@ TagManager:
   - GateLight
   - Gate_P
   - FinishLevel
+<<<<<<< HEAD
   - CollisionCone
   - LipsEnemy
   - LipsBody
   - BackObstacle
   - LipHead
+=======
+>>>>>>> 7ffc2ab27ec4dc5d1835e7d80e522af9a5219d43
   layers:
   - Default
   - TransparentFX

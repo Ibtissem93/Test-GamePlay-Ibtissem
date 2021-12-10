@@ -41,9 +41,12 @@ AnimatorStateMachine:
   - serializedVersion: 1
     m_State: {fileID: -6687709397616596160}
     m_Position: {x: 360, y: 190, z: 0}
+<<<<<<< HEAD
   - serializedVersion: 1
     m_State: {fileID: 8677395906343392891}
     m_Position: {x: 357.216, y: 280.56787, z: 0}
+=======
+>>>>>>> 7ffc2ab27ec4dc5d1835e7d80e522af9a5219d43
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -102,6 +105,7 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+<<<<<<< HEAD
 --- !u!1102 &8677395906343392891
 AnimatorState:
   serializedVersion: 6
@@ -128,3 +132,5 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+=======
+>>>>>>> 7ffc2ab27ec4dc5d1835e7d80e522af9a5219d43

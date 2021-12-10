@@ -146,7 +146,10 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
+<<<<<<< HEAD
     Android: com.Stolenpad.GAMEPLAYDEVELOPERTEST
+=======
+>>>>>>> 7ffc2ab27ec4dc5d1835e7d80e522af9a5219d43
     Standalone: com.Stolenpad.GAMEPLAY-DEVELOPER-TEST
   buildNumber:
     Standalone: 0
@@ -155,7 +158,11 @@ PlayerSettings:
   overrideDefaultApplicationIdentifier: 0
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 19
+<<<<<<< HEAD
   AndroidTargetSdkVersion: 30
+=======
+  AndroidTargetSdkVersion: 0
+>>>>>>> 7ffc2ab27ec4dc5d1835e7d80e522af9a5219d43
   AndroidPreferredInstallLocation: 1
   aotOptions: 
   stripEngineCode: 1
@@ -259,6 +266,7 @@ PlayerSettings:
   AndroidValidateAppBundleSize: 1
   AndroidAppBundleSizeToValidate: 100
   m_BuildTargetIcons: []
+<<<<<<< HEAD
   m_BuildTargetPlatformIcons:
   - m_BuildTarget: Android
     m_Icons:
@@ -352,6 +360,9 @@ PlayerSettings:
       m_Height: 36
       m_Kind: 1
       m_SubKind: 
+=======
+  m_BuildTargetPlatformIcons: []
+>>>>>>> 7ffc2ab27ec4dc5d1835e7d80e522af9a5219d43
   m_BuildTargetBatching:
   - m_BuildTarget: Standalone
     m_StaticBatching: 1
@@ -699,7 +710,10 @@ PlayerSettings:
   assemblyVersionValidation: 1
   gcWBarrierValidation: 0
   apiCompatibilityLevelPerPlatform:
+<<<<<<< HEAD
     Android: 3
+=======
+>>>>>>> 7ffc2ab27ec4dc5d1835e7d80e522af9a5219d43
     Standalone: 3
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
